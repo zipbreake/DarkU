@@ -1,0 +1,76 @@
+<=<=<=<=<=<=<= mount (22/04/04) <=<=<=<=<=<=<=
+Añadir soporte para ZLIB.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= mount (22/04/04) <=<=<=<=<=<=<=
+Ver la posibilidad de implementar la
+persistencia BDD procedente del ircu H.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (23/04/04) <=<=<=<=<=<=<=
+Crear un modo de usuario comercial,
+privilegios a decidir por parte de la
+administración.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (23/04/04) <=<=<=<=<=<=<=
+Crear el modo +C.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (23/04/04) <=<=<=<=<=<=<=
+Restringir ciertas tablas a nicks con +r.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (23/04/04) <=<=<=<=<=<=<=
+Evitar linkar nodos con demasiada diferencia de TS.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (23/04/04) <=<=<=<=<=<=<=
+Añadir el comando WATCH.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (23/04/04) <=<=<=<=<=<=<=
+Diferenciar el modo +c en dos modos, +C y +c,
+que nunca puedan estar juntos, siendo el +C
+parser de todo tipo.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (23/04/04) <=<=<=<=<=<=<=
+Chivato de invite.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (23/04/04) <=<=<=<=<=<=<=
+Badwords personalizadas en canales por DB2.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (23/04/04) <=<=<=<=<=<=<=
+Limitar el numero de subclaves de la DB2.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (23/04/04) <=<=<=<=<=<=<=
+Implementar el RC4 en la comunicación
+servidor<=>servidor.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= mount (25/04/04) <=<=<=<=<=<=<=
+A la hora de hacer un /WHOWAS, un oper
+debería poder ver la ip virtual del
+usuario.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= mount (25/04/04) <=<=<=<=<=<=<=
+El servidor al que estamos conectados se
+vé con un whois a sí mismo sin privilegios.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (11/05/04) <=<=<=<=<=<=<=
+Implementar el mensaje de entrada a un canal
+por base de datos.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+
+<=<=<=<=<=<=<= RyDeN (11/05/04) <=<=<=<=<=<=<=
+Al suspender un nick se le debería hacer
+rename o aplicarsele el flag +S
+automáticamente.
+=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>
+

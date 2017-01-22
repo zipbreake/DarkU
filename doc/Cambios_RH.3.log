@@ -1,0 +1,114 @@
+28/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.23)        FIX
+-----------------------------------------------------------------------
+Arreglamos el m_names.c
+
+28/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.22)    FEATURE
+-----------------------------------------------------------------------
+En el WHOIS mostramos todos los modos que tiene un usuario dentro del
+canal en cuestion.
+
+28/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.21)    FEATURE
+-----------------------------------------------------------------------
+Cuando cambiamos de nick demasiado rapido, nos bloquea el cambio pero
+enviaba a los canales que el nick 'x' ahora era conocido como 'x' de
+forma que se puede flodeear cun canal a pesar de esta restriccion.
+Ahora este mensaje no se envia a los canales.
+
+28/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.20)    FEATURE
+-----------------------------------------------------------------------
+Cuando entra un usuario nuevo no se le debe de notificar, al menos no
+en la parte de arriba del todo su IP virtual, asi que oculto esta
+notificacion.
+
+28/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.19)        FIX
+-----------------------------------------------------------------------
+Arreglo un pequeño fallo en el parche 3.17
+
+28/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.18)    FEATURE
+-----------------------------------------------------------------------
+Aplicamos las mismas restricciones al modo +a de canales que al +q, en
+el caso del +a solo se podrá poner por BMODE.
+
+28/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.17)    FEATURE
+-----------------------------------------------------------------------
+Cambio la funcion make_virtualhost, ahora solo recalcula la IP virtual
+cuando se produce en esta algun cambio, sino se ignora.
+
+28/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.16)    FEATURE
+-----------------------------------------------------------------------
+Elimino el VhostServ de la configuración de la BDD, tabla b, e
+informamos del cambio de IP virtual por el RAW 396 ya estandarizado
+para todos los Undernet.
+
+27/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.15)    FEATURE
+-----------------------------------------------------------------------
+El modo +a de canal lo pueden poner los Representantes de la red a
+voluntad sin limitaciones o a través de BMODE.
+
+27/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.14)        FIX
+-----------------------------------------------------------------------
+FIXes varios para el modo +a de canales
+
+19/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.13)    FEATURE
+-----------------------------------------------------------------------
+Añadimos más codigo para el modo +a de canales. Ahora el modo +a solo
+puede ser dado por servidores. Además estos tienen protección total en
+el canal excepto ante el fundador +q
+
+19/12/05 Er_Maqui  <er_maqui@darkbolt.net>  (u2.10.RH.03.12)    FEATURE
+-----------------------------------------------------------------------
+Actualizados los RAW del servidor para que distribuyan el modo +a de
+canales. Se asigna el simbolo & para los +a, y a su vez se cambia el
+simbolo de . a ~ para los owner (+q).
+
+19/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.11)    FEATURE
+-----------------------------------------------------------------------
+Finalizado el modo +a, solamente falta establecerle privilegios.
+
+19/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.10)    FEATURE
+-----------------------------------------------------------------------
+Añado a Er_Maqui a los créditos :)
+
+19/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.09)        FIX
+-----------------------------------------------------------------------
+Arreglo un fallo en un array, aprovecho y añado alguna función más
+para soportar admins de canales.
+
+19/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.08)    FEATURE
+-----------------------------------------------------------------------
+Añadimos definiciones que faltaban para el modo de CHLF_ADMIN.
+
+19/12/05 Er_Maqui  <er_maqui@darkbolt.net>  (u2.10.RH.03.07)    FEATURE
+-----------------------------------------------------------------------
+Comenzada la implementacion del nuevo modo de canal CHFL_ADMIN,
+adaptada la funcion de envio de modos.
+
+12/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.06)    FEATURE
+-----------------------------------------------------------------------
+Cambiamos la opcion por defecto de usar BDD en los ircds a TRUE de esta
+forma si no se indica lo contrario SI se usara BDD
+
+07/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.05)        FIX
+-----------------------------------------------------------------------
+Arreglo otro pequeño fallo de la función BDD en la suspensión de nicks.
+
+07/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.04)        FIX
+-----------------------------------------------------------------------
+Corregido un pequeño olvido ;P
+
+06/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.03)    FEATURE
+-----------------------------------------------------------------------
+Actualizamos los créditos ;P De paso tambien los traducimos al español
+para ser más comprensibles.
+
+06/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.02)    FEATURE
+-----------------------------------------------------------------------
+Añadimos la tabla de configuraciones 'tabla c' para poner en ella
+configuraciones que afecten a la red de forma Global.
+
+06/12/05 ZipBreake <jfv@javierfv.com>       (u2.10.RH.03.01)    FEATURE
+-----------------------------------------------------------------------
+Añadimos cambio de modos por BDD cuando se registra un nick (+r) y
+cuando se suspende (+S), también en caso de quitarse de la BDD se
+realiza la acción que corresponda (-r, -S) directamente sobre el
+usuario.

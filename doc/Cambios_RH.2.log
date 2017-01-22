@@ -1,0 +1,566 @@
+***** Cambios del ircu2.10 para Redhispana.Org *****
+
+24/10/03 RyDeN             (u2.10.RH.02.01)                FEATURE
+------------------------------------------------------------------
+Permitimos a los preopers hacer override de modos de canal.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.02)                CLEANUP
+------------------------------------------------------------------
+Migro todos los malloc y free del s_bdd.c a MyMalloc y MyFree.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.03)                FEATURE
+------------------------------------------------------------------
+Creo el delete de tablas de base de datos.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.04)                    FIX
+------------------------------------------------------------------
+Corregido el modo +c de canales.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.05)                    FIX
+------------------------------------------------------------------
+Reparado el bug que eliminada el modo de fundador en el net.burst.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.06)                FEATURE
+------------------------------------------------------------------
+El modo de fundador solo puede setearse con BOTMODE.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.07)                FEATURE
+------------------------------------------------------------------
+Los nicks con +r pueden ver los modos ajenos.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.08)                FEATURE
+------------------------------------------------------------------
+Los representantes pueden ver cualquier usuario en el WHO.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.09)                CLEANUP
+------------------------------------------------------------------
+Eliminamos unos warnings de compilación.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.10)                    FIX
+------------------------------------------------------------------
+Reparado el parser de colores que en ciertas ocasiones fallaba.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.11)                    FIX
+------------------------------------------------------------------
+Pasamos el nombre del posible fundador del canal por ToLower.
+
+
+08/11/03 RyDeN             (u2.10.RH.02.12)                    FIX
+------------------------------------------------------------------
+Bugfix del rename.
+
+
+09/11/03 RyDeN             (u2.10.RH.02.13)                FEATURE
+------------------------------------------------------------------
+Creado el modo +G de canal (no ctcps ni dccs).
+
+
+09/11/03 RyDeN             (u2.10.RH.02.14)                    FIX
+------------------------------------------------------------------
+Reparado el parseo de cambios de modo de un halfop.
+
+
+09/11/03 RyDeN             (u2.10.RH.02.15)                    FIX
+------------------------------------------------------------------
+Reparado el autodel recibido de servidores remotos.
+
+
+10/11/03 RyDeN             (u2.10.RH.02.16)                CLEANUP
+------------------------------------------------------------------
+Eliminados los ToLower del s_bdd.c para dejar paso al ircd_strcmp
+y así agilizar enormemente el código.
+
+
+11/11/03 RyDeN             (u2.10.RH.02.17)                    FIX
+------------------------------------------------------------------
+Fix del make_virtualhost en el que una ip virtual personalizada
+solo era seteada en el nodo local.
+
+
+11/11/03 RyDeN             (u2.10.RH.02.18)                    FIX
+------------------------------------------------------------------
+En el m_rename se ha de recalcular la ip virtual.
+
+
+12/11/03 RyDeN             (u2.10.RH.02.19)                    FIX
+------------------------------------------------------------------
+Arreglado cierto desorden al calcular la IP virtual personalizada.
+
+
+12/11/03 RyDeN             (u2.10.RH.02.20)                    FIX
+------------------------------------------------------------------
+Al conectar un nick nuevo no recibia el notice de IP virtual.
+
+
+12/11/03 RyDeN             (u2.10.RH.02.21)                    FIX
+------------------------------------------------------------------
+Arreglada en el envio del net.burst una comprobacion de tamaño que
+enviaba nicks inexistentes en este.
+
+
+27/11/03 RyDeN             (u2.10.RH.02.22)                 FEATURE
+-------------------------------------------------------------------
+Creado nuevo flag BADWORDS_QUITMSG para censurar el mensaje de
+salida, que en el caso de tener spam, se sustituye por "Signed off
+(spam)".
+
+
+27/11/03 RyDeN             (u2.10.RH.02.23)                 FEATURE
+-------------------------------------------------------------------
+Comprobamos badwords en los quit sin colores.
+
+
+28/11/03 RyDeN             (u2.10.RH.02.24)                 FEATURE
+-------------------------------------------------------------------
+Comprobamos badwords en los privmsg a usuarios sin colores.
+
+
+28/11/03 RyDeN             (u2.10.RH.02.25)                 FEATURE
+-------------------------------------------------------------------
+Al hacer quit se le envía el comando ERROR al usuario con su quit.
+
+
+03/12/03 RyDeN             (u2.10.RH.02.26)                     FIX
+-------------------------------------------------------------------
+Error en el parseado de colores.
+
+
+13/12/03 RyDeN             (u2.10.RH.02.27)                 FEATURE
+-------------------------------------------------------------------
+Eliminamos el "RH" de las ips virtuales.
+
+
+15/12/03 RyDeN             (u2.10.RH.02.28)                 CLEANUP
+-------------------------------------------------------------------
+Optimización del modo +q de canales.
+
+
+15/12/03 RyDeN             (u2.10.RH.02.29)                 FEATURE
+-------------------------------------------------------------------
+Los créditos del INFO se muestran SIEMPRE aunque el usuario que
+ejecute el comando sea un IRCop.
+
+
+23/12/03 RyDeN             (u2.10.RH.02.30)                     FIX
+-------------------------------------------------------------------
+Atendemos a los cambios de nick para desactivar el modo +q del
+nick en los canales en los que lo tenga.
+
+
+23/12/03 RyDeN             (u2.10.RH.02.31)                     FIX
+-------------------------------------------------------------------
+Bugfix en el s_bdd.c en la actividad de tabla de canales.
+
+
+23/12/03 RyDeN             (u2.10.RH.02.32)                 CLEANUP
+-------------------------------------------------------------------
+Limpieza del hash.c
+
+
+23/12/03 RyDeN             (u2.10.RH.02.33)                 CLEANUP
+-------------------------------------------------------------------
+Separo el comando "m_tburst" a un fichero separado m_tburst.c
+
+
+23/12/03 RyDeN             (u2.10.RH.02.34)                 CLEANUP
+-------------------------------------------------------------------
+Separo las negociaciones en s_neg.c y m_protoctl.c
+
+
+23/12/03 RyDeN             (u2.10.RH.02.35)                 FEATURE
+-------------------------------------------------------------------
+Cambio el comando "CONFIG" por "PROTOCTL"
+
+
+23/12/03 RyDeN             (u2.10.RH.02.36)                 FEATURE
+-------------------------------------------------------------------
+Eliminamos el comando "HIDEMYSERV" y lo introducimos como flag.
+Además creamos una F-line para activar/desactivar esta opción. Los
+servidores ocultos se pasan al linkar al igual que los hub y
+services.
+
+
+23/12/03 RyDeN             (u2.10.RH.02.37)                 CLEANUP
+-------------------------------------------------------------------
+Separo el comando "m_identify" a un fichero separado m_identify.c
+
+
+23/12/03 RyDeN             (u2.10.RH.02.38)                 CLEANUP
+-------------------------------------------------------------------
+Separo el comando "m_rc4key" a un fichero separado m_rc4key.c
+
+
+23/12/03 RyDeN             (u2.10.RH.02.39)                 FEATURE
+-------------------------------------------------------------------
+Aumentamos el IPCHECK_CLONE_LIMIT a 7.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.40)                     FIX
+-------------------------------------------------------------------
+Permitimos cambiar el límite de usuarios de un canal sin tener que
+eliminar uno previo antes.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.41)                 FEATURE
+-------------------------------------------------------------------
+Traduzco los dias de la semana y del mes del ircd.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.42)                     FIX
+-------------------------------------------------------------------
+En el error del QUIT no se le mostraba al usuario el victim y el
+killer.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.43)                     FIX
+-------------------------------------------------------------------
+El modo +G de canales no ha de procesar los ACTION.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.44)                 FEATURE
+-------------------------------------------------------------------
+Se prohíbe mirar la lista de silence ajena a no ser que el usuario
+sea un representante.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.45)                 FEATURE
+-------------------------------------------------------------------
+Si un usuario envía un mensaje a otro que le está silenciando, se
+le envía el error correspondiente.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.46)                     FIX
+-------------------------------------------------------------------
+Si un usuario con +k tenía halfop en un canal perdía sus
+privilegios.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.47)                 CLEANUP
+-------------------------------------------------------------------
+Eliminamos el autodel.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.48)                 CLEANUP
+-------------------------------------------------------------------
+Separo la función "m_ghost" a un fichero separado m_ghost.c
+
+
+24/12/03 RyDeN             (u2.10.RH.02.49)                 CLEANUP
+-------------------------------------------------------------------
+Separo la función "m_rename" a un fichero separado m_rename.c
+
+
+24/12/03 RyDeN             (u2.10.RH.02.50)                 FEATURE
+-------------------------------------------------------------------
+Cambio la funcionalidad del GHOST.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.51)                 FEATURE
+-------------------------------------------------------------------
+Migro el ghost mediante nick!clave al nuevo tipo.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.52)                 CLEANUP
+-------------------------------------------------------------------
+Elimino la negrita en el notice de los nicks con forbid.
+
+
+24/12/03 RyDeN             (u2.10.RH.02.53)                     FIX
+-------------------------------------------------------------------
+Diversos bugfixes relacionados con el GHOST.
+
+
+27/12/03 RyDeN             (u2.10.RH.02.54)                     FIX
+-------------------------------------------------------------------
+El feature de servidor oculto no se enviaba al conectar el
+servidor.
+
+
+27/12/03 RyDeN             (u2.10.RH.02.55)                     FIX
+-------------------------------------------------------------------
+El feature de servidor oculto de un servidor que conecta desde otro
+servidor ajeno no se enviaba al resto de la red.
+
+
+27/12/03 RyDeN             (u2.10.RH.02.56)                 FEATURE
+-------------------------------------------------------------------
+Los silences de un usuario se propagan a través de la red.
+
+
+13/01/04 RyDeN             (u2.10.RH.02.57)                     FIX
+-------------------------------------------------------------------
+Si un usuario sobrepasaba el limite de targets se le enviaba el
+error de estar silenciado.
+
+
+13/01/04 RyDeN             (u2.10.RH.02.58)                 CLEANUP
+-------------------------------------------------------------------
+Eliminamos el comando PROTO.
+
+
+13/01/04 RyDeN             (u2.10.RH.02.59)                 FEATURE
+-------------------------------------------------------------------
+Activada la negociación servidor <=> servidor cifrada con RC4.
+
+
+13/01/04 RyDeN             (u2.10.RH.02.60)                 CLEANUP
+-------------------------------------------------------------------
+Movemos el cifrado en RC4 saliente para que el debug no salga
+cifrado.
+
+15/01/04 RyDeN             (u2.10.RH.02.61)                     FIX
+-------------------------------------------------------------------
+BugFix del s_bdd.c
+
+08/02/04 RyDeN             (u2.10.RH.02.62)                     FIX
+-------------------------------------------------------------------
+El whois remoto muestra el servidor del usuario.
+
+10/02/04 RyDeN             (u2.10.RH.02.63)                 FEATURE
+-------------------------------------------------------------------
+Optimizamos la reserva de memoria para los registros en la base de
+datos.
+
+16/02/04 RyDeN             (u2.10.RH.02.64)                 FEATURE
+-------------------------------------------------------------------
+El modo de usuario +o (ircop) se muestra en los flags del who.
+
+16/02/04 RyDeN             (u2.10.RH.02.65)                     FIX
+-------------------------------------------------------------------
+Reparamos un bug que mostraba los servidores de los usuarios en el
+who.
+
+17/02/04 RyDeN             (u2.10.RH.02.66)                 CLEANUP
+-------------------------------------------------------------------
+Importantes optimizaciones de la base de datos en cuanto al control
+interno.
+
+17/02/04 RyDeN             (u2.10.RH.02.67)                 FEATURE
+-------------------------------------------------------------------
+Creado el iterador de bases de datos.
+
+17/02/04 RyDeN             (u2.10.RH.02.68)                 FEATURE
+-------------------------------------------------------------------
+Aplicado el iterador de bases de datos al join de registros activos
+de tablas.
+
+17/02/04 RyDeN             (u2.10.RH.02.69)                     FIX
+-------------------------------------------------------------------
+Error en el db_iterador que si el primer bucket de una tabla estaba
+vacío no retornaba registro alguno.
+
+17/02/04 RyDeN             (u2.10.RH.02.70)                     FIX
+-------------------------------------------------------------------
+El db_iterador fallaba tras enviar el último registro por comparar
+mal el tamaño de hash de una tabla.
+
+17/02/04 RyDeN             (u2.10.RH.02.71)                 CLEANUP
+-------------------------------------------------------------------
+Aplicado el iterador de bases de datos al parser de badwords.
+
+17/02/04 RyDeN             (u2.10.RH.02.72)                 CLEANUP
+-------------------------------------------------------------------
+Aplicado el iterador de bases de datos al delete de tablas.
+
+17/02/04 RyDeN             (u2.10.RH.02.73)                 FEATURE
+-------------------------------------------------------------------
+Al recibir un delete de una tabla ha de cortarse el grifo de esta.
+
+17/02/04 RyDeN             (u2.10.RH.02.74)                 CLEANUP
+-------------------------------------------------------------------
+Aplicado el iterador de bases de datos al limpiado de una tabla.
+
+17/02/04 RyDeN             (u2.10.RH.02.75)                     FIX
+-------------------------------------------------------------------
+Reparado un bug en el parser de badwords.
+
+17/02/04 RyDeN             (u2.10.RH.02.76)                     FIX
+-------------------------------------------------------------------
+El iterador de bases de datos se saltaba el primer bucket de hash.
+
+17/02/04 RyDeN             (u2.10.RH.02.77)                     FIX
+-------------------------------------------------------------------
+El db_iterador fallaba si tenía algún registro en el último bucket.
+
+24/02/04 RyDeN             (u2.10.RH.02.78)                 FEATURE
+-------------------------------------------------------------------
+Las máscaras de ip tipo *@127.1* pasan por match al comprobar la
+lista de usuarios.
+
+24/02/04 RyDeN             (u2.10.RH.02.79)                     FIX
+-------------------------------------------------------------------
+El modo +q fallaba ante caracteres especiales por no usar el
+ircd_strcmp.
+
+27/03/04 RyDeN             (u2.10.RH.02.80)                     FIX
+-------------------------------------------------------------------
+Un usuario sin +X no veía su propia IP real en el userip.
+
+30/03/04 RyDeN             (u2.10.RH.02.81)                     FIX
+-------------------------------------------------------------------
+En un net.burst un servidor no aceptaba el modo +O enviado desde
+otro.
+
+30/03/04 RyDeN             (u2.10.RH.02.82)                 CLEANUP
+-------------------------------------------------------------------
+Eliminado completamente el modo +I de usuario.
+
+30/03/04 RyDeN             (u2.10.RH.02.83)                 CLEANUP
+-------------------------------------------------------------------
+Importante optimización de la tabla 'f' de la BDD.
+
+30/03/04 RyDeN             (u2.10.RH.02.84)                 CLEANUP
+-------------------------------------------------------------------
+Movemos el rc4 a una funcion que procesa todos los cambios de un
+mensaje listo para enviar.
+
+31/03/04 RyDeN             (u2.10.RH.02.85)                     FIX
+-------------------------------------------------------------------
+Modos de canal como el +r o el +j no deben pasarse en el burst,
+sino que deben ponerse automáticamente al crearse el canal ya que
+son gestionados por BDD.
+
+31/03/04 RyDeN             (u2.10.RH.02.86)                     FIX
+-------------------------------------------------------------------
+Un usuario recién conectado no pasaba por el comprobador de flags.
+
+22/04/04 mount             (u2.10.RH.02.87)                     FIX
+-------------------------------------------------------------------
+Para ciertos clientes que no soportan el uso de carácteres
+inválidos (':') localmente en el nick, añado soporte de
+identificación por espacio, al igual que en el ircu de
+IRC Hispano:
+
+       /quote nick el_nick la_contraseña
+
+23/04/04 RyDeN             (u2.10.RH.02.88)                 CLEANUP
+-------------------------------------------------------------------
+Desactivamos temporalmente el RC4 en la comunicación entre
+servidores debido a constantes problemas en la comunicación.
+
+23/04/04 mount             (u2.10.RH.02.89)                 FEATURE
+-------------------------------------------------------------------
+Añado soporte para el "epoll() engine", para kernels 2.6, ya
+que ahorra considerablemente %CPU a la hora de tener un
+número importante de clientes en la red.
+
+El parche parece ser estable, lo he probado en Red Hispana
+con un total de 186 clientes en un servidor y sólo gasta un 0.3%
+de CPU.
+
+Ver fichero ircd/engine_epoll.c
+
+También, he cambiado un poco el sistema de gestión de engines,
+ya que bajo ciertas circunstancias se compilaba poll()
+innecesariamente.
+
+23/04/04 mount             (u2.10.RH.02.90)                 FEATURE
+-------------------------------------------------------------------
+Me añado a los créditos.
+
+25/04/04 mount             (u2.10.RH.02.91)                 CLEANUP
+-------------------------------------------------------------------
+El nombre del servidor real ya no se muestra en RPL_YOURHOST
+y RPL_MYINFO, para mantener la confidencialidad que deseamos.
+
+Para ello, hemos creado la F:Line 'RH_PSEUDO_SERVERNAME', que
+debe contener el pseudo-nombre del servidor que queremos
+que el usuario vea. No usamos la actual 'HIS_SERVERNAME', ya
+que el uso de '*' es frecuente, y por lo tanto puede dar
+problemas de compatibilidad con clientes.
+
+Si 'RH_PSEUDO_SERVERNAME' no está definida, la clave por
+defecto es 'irc.redhispana.org'.
+						 
+25/04/04 RyDeN             (u2.10.RH.02.92)                 CLEANUP
+-------------------------------------------------------------------
+Si un usuario tiene G-line el mensaje de error al conectar era
+"K-lined". Distinguimos ambos terminos.
+
+26/04/04 mount             (u2.10.RH.02.93)                 CLEANUP
+-------------------------------------------------------------------
+He creado la función snoticeto_one(cptr, texto, ...), que
+se encarga de enviar SNOTICES con el nombre de
+RH_PSEUDO_SERVERNAME.
+
+Usamos esta función en los snotices que hayamos al conectar.
+
+26/04/04 mount             (u2.10.RH.02.94)                 CLEANUP
+-------------------------------------------------------------------
+Antes, cuando uno se hacía whois a sí mismo, salía el
+nombre del servidor REAL. Ahora, aplico RH_PSEUDO_SERVERNAME
+con HIS_SERVERINFO para 'rellenar'.
+
+Cuando se hacía whois a clientes externos, se usaba
+HIS_SERVERNAME, ahora uso RH_PSEUDO_SERVERNAME.
+
+26/04/04 RyDeN             (u2.10.RH.02.95)                     FIX
+-------------------------------------------------------------------
+Soluciono un bug introducido en el u2.10.RH.02.94 y aprovecho para
+optimizar la función.
+
+26/04/04 RyDeN             (u2.10.RH.02.96)                 FEATURE
+-------------------------------------------------------------------
+Hago que al cambiar los flags de un usuario conectado en la tabla
+'f' surtan efecto instantáneo.
+
+15/05/04 RyDeN             (u2.10.RH.02.97)                     FIX
+-------------------------------------------------------------------
+Reparamos todos los return del m_db.
+
+15/05/04 RyDeN             (u2.10.RH.02.98)                     FIX
+-------------------------------------------------------------------
+Solucionado otro bug de la base de datos.
+
+15/05/04 RyDeN             (u2.10.RH.02.99)                     FIX
+-------------------------------------------------------------------
+Corregimos otro bug que podía matar a un servidor con un comando de
+base de datos.
+
+16/05/04 RyDeN             (u2.10.RH.02.100)                FEATURE
+-------------------------------------------------------------------
+Creada la comprobación de HASH de tablas en el JOIN.
+
+16/05/04 RyDeN             (u2.10.RH.02.101)                FEATURE
+-------------------------------------------------------------------
+Implementado el DBQ de HASH.
+
+13/06/04 RyDeN             (u2.10.RH.02.102)                    FIX
+-------------------------------------------------------------------
+Reparado un bug del cifranick que mataba el ircd.
+
+13/06/04 qiz               (u2.10.RH.02.103)                CLEANUP
+-------------------------------------------------------------------
+Indentado todo el fichero s_bdd.c con 2 espacios y añadidas
+claves para todos los bloques (aunque sean simples).
+
+15/06/04 RyDeN             (u2.10.RH.02.104)                    FIX
+-------------------------------------------------------------------
+Reparado un bug del whowas que podia matar al ircd en caso de
+recuento de memoria.
+
+18/06/04 RyDeN             (u2.10.RH.02.105)                    FIX
+-------------------------------------------------------------------
+Reparado un bug introducido en el u2.10.RH.02.103.
+
+09/07/04 RyDeN             (u2.10.RH.02.106)                    FIX
+-------------------------------------------------------------------
+Reparado un bug de modos on connect y el indentado del m_nick.c.
+
+24/07/04 RyDeN             (u2.10.RH.02.107)                    FIX
+-------------------------------------------------------------------
+Arreglado un error en el m_ghost notificado por DIaN.
+
+04/09/04 RyDeN             (u2.10.RH.02.108)                CLEANUP
+-------------------------------------------------------------------
+Optimizado el rendimiento del parser de colores.

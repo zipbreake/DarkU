@@ -1,0 +1,344 @@
+* 2010/06/03 ZipBreake <javier@jfv.es>        Darku2.2r58         FEATURE
+  -----------------------------------------------------------------------
+  Las BADWORDS ahora funcionan tambien en los NOTICES.
+
+* 2010/04/29 ZipBreake <javier@jfv.es>        Darku2.2r57         FEATURE
+  -----------------------------------------------------------------------
+  Sistema de identificacion de Webchats por puertos especificos para este
+  tipo de clientes.
+
+* 2010/04/28 ZipBreake <javier@jfv.es>        Darku2.2r56         FEATURE
+  -----------------------------------------------------------------------
+  Implemento el modo +A de administrador local. Estos administradores
+  tienen los mismos privilegios que los operadores.
+
+* 2010/03/21 ZipBreake <javier@jfv.es>        Darku2.2r55         FEATURE
+  -----------------------------------------------------------------------
+  Implemento el modo N de canales, que evita que los canales con ese modo
+  reciban NOTICES de los usuarios.
+
+* 2010/03/08 ZipBreake <javier@jfv.es>        Darku2.2r54         FEATURE
+  -----------------------------------------------------------------------
+  Añado las features de HIDDEN_QUIT que muestra un mensaje por defecto en
+  los usuarios no registrados y HIDDEN_QUIT_OPERS, que pone un mensaje de
+  salida por defecto para los representantes de la red.
+
+* 2010/03/05 ZipBreake <javier@jfv.es>        Darku2.2r53             FIX
+  -----------------------------------------------------------------------
+  Envio el STATUS personalizado por el RAW 309, utilizado para opers en
+  otras redes de IRC.
+
+* 2010/02/24 ZipBreake <javier@jfv.es>        Darku2.2r52         FEATURE
+  -----------------------------------------------------------------------
+  Añado la tabla "r" como RAWSDB, sirve para añadir una linea al whois
+  de un usuario de forma totalmente personalizada.
+
+* 2010/02/24 ZipBreake <javier@jfv.es>        Darku2.2r51         FEATURE
+  -----------------------------------------------------------------------
+  Los usuarios que tienen +W tambien pueden entrar a canales con +Z sin
+  necesidad de tener el modo +z.
+
+* 2010/02/24 ZipBreake <javier@jfv.es>        Darku2.2r50         CLEANUP
+  -----------------------------------------------------------------------
+  Reajusto los modos de forma mas correcta:
+	- Cambio en el codigo PREOPER a MODERADOR internamente.
+	- Añado el modo +I para usuarios (Invisibilidad avanzada)
+	- Añado el modo +W fijado por el servidor para WebChats.
+	- Elimino el modo +A de ServerAdmin.
+	- Eliminado el modo +n y el comando IDENTIFY.
+
+* 2010/02/04 ZipBreake <javier@jfv.es>        Darku2.2r49         FEATURE
+  -----------------------------------------------------------------------
+  Elimino a los preoperdores y agrego a los moderadores con mas interes
+  para las redes actuales. Por comodidad dejo el codigo del preoperador
+  y le cambio el whois.
+
+* 2009/12/05 ZipBreake <javier@jfv.es>        Darku2.2r48         FEATURE
+  -----------------------------------------------------------------------
+  Implemento la feature LINK_CHANNELS, cuando un servidor esta en modo
+  SECURE_CHANNELS, cuando un usuario intenta entrar a un canal que no
+  tiene acceso, en su defecto lo hace al canal linkado por configuracion.
+
+* 2009/12/05 ZipBreake <javier@jfv.es>        Darku2.2r47         FEATURE
+  -----------------------------------------------------------------------
+  Implemento el modo C de canales, no deja enviar texto con color, el
+  c minuscula tampoco muestra ahora el mensaje que mostraba, solamente
+  elimina el color de los mensajes.
+
+* 2009/12/05 ZipBreake <javier@jfv.es>        Darku2.2r46         FEATURE
+  -----------------------------------------------------------------------
+  Cambio el modo de NOJOINS, NOPARTS al modo "u" para mantener los modos
+  acordes con lo utilizado por otros ircds.
+ 
+* 2009/12/03 ZipBreake <javier@jfv.es>        Darku2.2r45         FEATURE
+  -----------------------------------------------------------------------
+  Fix en el SVSJOIN y SVSPART
+
+* 2009/12/03 ZipBreake <javier@jfv.es>        Darku2.2r44         FEATURE
+  -----------------------------------------------------------------------
+  Todos los ADMINistradores de la red y los BOTS oficiales pueden ponerse
+  la o-line con el comando OPER sin necesidad de introducir usuario ni
+  contraseña.
+
+* 2009/12/02 ZipBreake <javier@jfv.es>        Darku2.2r43         FEATURE
+  -----------------------------------------------------------------------
+  Implemento el AutoJoin como feature para realizar autojoins locales
+  a canales. La funcion emplea el m_join quedando el join restringido
+  por los modos y privilegios especificos de cada canal.
+
+* 2009/12/02 ZipBreake <javier@jfv.es>        Darku2.2r42             FIX
+  -----------------------------------------------------------------------
+  Habilito el comando SETNAME para cambiar en caliente el REALNAME, ahora
+  ya se distribuye de forma correcta entre los servidores sin que mueran.
+
+* 2009/12/01 ZipBreake <javier@jfv.es>        Darku2.2r41         FEATURE
+  -----------------------------------------------------------------------
+  Los bots se saltan las protecciones de canales por tabla j
+
+* 2009/12/01 ZipBreake <javier@jfv.es>        Darku2.2r40         FEATURE
+  -----------------------------------------------------------------------
+  Revierto el parche 2.2r04 y lo convierto en limitada la creación de
+  canales a administradores y coadministradores de la red.
+
+* 2009/11/19 ZipBreake <javier@jfv.es>        Darku2.2r39         FEATURE
+  -----------------------------------------------------------------------
+  Revierto el parche que impedia la ejecución de ciertos comandos a los
+  bots de usuarios. Pueden usar el ircd normalmente.
+
+* 2009/11/19 ZipBreake <javier@jfv.es>        Darku2.2r38         FEATURE
+  -----------------------------------------------------------------------
+  Implemento el modo espureo de canal x para que los Operadores e IRCops
+  tengan que ponerlo en canales para forzar la puesta de otros modos,
+  sino no se ejecuta el modo.
+
+* 2009/11/11 ZipBreake <javier@jfv.es>        Darku2.2r37             FIX
+  -----------------------------------------------------------------------
+  Corregido error en el WHOIS.
+
+* 2009/10/03 ZipBreake <javier@jfv.es>        Darku2.2r36             FIX
+  -----------------------------------------------------------------------
+  Corregido el error que enviaba de forma multiple los TOPIC y los NAMES
+  al hacer SVSJOIN a un canal.
+
+* 2009/10/03 ZipBreake <javier@jfv.es>        Darku2.2r35         FEATURE
+  -----------------------------------------------------------------------
+  Elimino el modo de canal +A ya que no se habia terminado de implementar
+  y carecia de sentido.
+
+* 2009/06/01 ZipBreake <javier@jfv.es>        Darku2.2r34             FIX
+  -----------------------------------------------------------------------
+  Bloqueo el comando SETNAME en ircd/parse.c
+
+* 2009/05/11 ZipBreake <javier@jfv.es>        Darku2.2r33         FEATURE
+  -----------------------------------------------------------------------
+  Elimino el modo de DEVEL de la red por no necesidad y en su lugar
+  añado el modo de SERVERADMIN (A) por BDD y ligado al +o.
+
+* 2009/05/10 ZipBreake <javier@jfv.es>        Darku2.2r32         FEATURE
+  -----------------------------------------------------------------------
+  Añado el comando SETNAME para cambiar el REALNAME, de modo que se puede
+  usar como nombre para mostrar.
+
+* 2009/05/09 ZipBreake <javier@jfv.es>        Darku2.2r31         FEATURE
+  -----------------------------------------------------------------------
+  Elimino la Feature WEBCHAT_REALNAME y ahora añado la IP para los
+  servidores de webchat a traves del parametro USER.
+
+* 2009/05/08 ZipBreake <javier@jfv.es>        Darku2.2r30         FEATURE
+  -----------------------------------------------------------------------
+  Para que un representante o un ircop puedan entrar a un canal con modos
+  de restriccion (+ikl...) deben utilizar la clave de canal OPER o GOD
+  respectivamente. Esto evita auto-rejoins de opers por sus privilegios.
+
+* 2009/05/06 ZipBreake <javier@jfv.es>        Darku2.2r29         FEATURE
+  -----------------------------------------------------------------------
+  Compruebo y resestrablezco privilegios a lo largo del ircd
+
+* 2009/05/06 ZipBreake <javier@jfv.es>        Darku2.2r28         FEATURE
+  -----------------------------------------------------------------------
+  Desactivo la comprobación de idents de usuario, ahora se puede poner lo
+  que quieran como ident.
+
+* 2009/04/28 ZipBreake <javier@jfv.es>        Darku2.2r27             FIX
+  -----------------------------------------------------------------------
+  Soluciono el fallo del SVSJOIN y SVSPART que no se distribuia.
+
+* 2009/04/28 ZipBreake <javier@jfv.es>        Darku2.2r26             FIX
+  -----------------------------------------------------------------------
+  Solucionado un BUG en el BURST
+
+* 2009/04/18 ZipBreake <javier@jfv.es>        Darku2.2r25         FEATURE
+  -----------------------------------------------------------------------
+  Habilito las restricciones para usuarios con modo +b de userbots:
+	AWAY, GHOST, JOIN, LINKS, MAP, OPER, PART, WHO y WHOIS.
+	NICK: No puede cambiarse el nick una vez puesto el de bot.
+
+* 2009/04/18 ZipBreake <javier@jfv.es>        Darku2.2r24         FEATURE
+  -----------------------------------------------------------------------
+  Nuevos comandos SVSJOIN y SVSPART.
+
+* 2009/04/18 ZipBreake <javier@jfv.es>        Darku2.2r23         FEATURE
+  -----------------------------------------------------------------------
+  En el whois los modos de usuario los ven los usuarios registrados, esto
+  no tiene a mi modo de ver mucho sentido. Solament los representantes de
+  la red y el propio usuario pueden ver los modos.
+
+* 2009/04/18 ZipBreake <javier@jfv.es>        Darku2.2r22             FIX
+  -----------------------------------------------------------------------
+  Soluciono un problema en la respuesta de modos del comando WHO
+
+* 2009/04/18 ZipBreake <javier@jfv.es>        Darku2.2r21         FEATURE
+  -----------------------------------------------------------------------
+  Implemento el modo +I, restringido por flags en BDD. Este modo oculta
+  los RAW correspondientes con operador, administrador, ircop etc...
+
+* 2009/04/18 ZipBreake <javier@jfv.es>        Darku2.2r20         FEATURE
+  -----------------------------------------------------------------------
+  Revierto los parches r17, r18 y r19.
+
+* 2009/04/01 ZipBreake <javier@jfv.es>        Darku2.2r19         FEATURE
+  -----------------------------------------------------------------------
+  Convierto el antiguo flag de Administrador en miembro del Staff y el
+  de Operador en disponible para Ayuda.
+
+* 2009/04/01 ZipBreake <javier@jfv.es>        Darku2.2r18         FEATURE
+  -----------------------------------------------------------------------
+  Elimino los modos de preoperador (p) coadministrador (c) y el de
+  desarrollador (D)
+ 
+* 2009/04/01 ZipBreake <javier@jfv.es>        Darku2.2r17         FEATURE
+  -----------------------------------------------------------------------
+  Cambio el raw del IRCop a: Es un IRCop de "nombre de la red" y cambio
+  los de Administrador y Operador para ser utilizados como Staff y Helper
+
+* 2009/03/31 ZipBreake <javier@jfv.es>        Darku2.2r16             FIX
+  -----------------------------------------------------------------------
+  Arreglo un bug relativo a la propagacion de modos de admins y coadmins
+
+* 2009/03/16 ZipBreake <javier@jfv.es>        Darku2.2r15         FEATURE
+  -----------------------------------------------------------------------
+  Cambio el modo +c para CoAdmins y el +a pasa a usarse para Admins, ya
+  que en la red disponemos de pocos usuarios fuerzo un cambio momentaneo
+  actualizando todos los servidores, sin parches intermedios.
+
+* 2009/03/16 ZipBreake <javier@jfv.es>        Darku2.2r14         FEATURE
+  -----------------------------------------------------------------------
+  Los modos b y B de usuario ahora se dan al ponerse el nick que los
+  tenga como flag y quedan fijados (no pueden ponerse/quitarse a voluntad
+  del usuario)
+
+* 2009/03/10 ZipBreake <javier@jfv.es>        Darku2.2r13         CLEANUP
+  -----------------------------------------------------------------------
+  Ciertos cambios esteticos en el WHOIS, y aprovecho para limpiar ciertas
+  cosas obsoletas.
+
+* 2009/02/24 ZipBreake <javier@jfv.es>        Darku2.2r12         FEATURE
+  -----------------------------------------------------------------------
+  Implemento el modo +A, para canales, solo permito entrar a admins y a
+  coadmins a canales con este modo.
+
+* 2009/02/18 ZipBreake <javier@jfv.es>        Darku2.2r11         FEATURE
+  -----------------------------------------------------------------------
+  Cambios en las features y definiciones para permitir topics mas largos
+  nombres de usuario y algunas cosas mas.
+
+* 2009/02/08 ZipBreake <javier@jfv.es>        Darku2.2r10         FEATURE
+  -----------------------------------------------------------------------
+  Elimino el modo AUTOOP (+A) de canales.
+
+* 2009/02/08 ZipBreake <javier@jfv.es>        Darku2.2r09         CLEANUP
+  -----------------------------------------------------------------------
+  Limpio el codigo relativo al modo +q y +a de usuarios en canales que
+  ya estaba obsoleto.
+
+* 2009/02/03 ZipBreake <javier@jfv.es>        Darku2.2r08         FEATURE
+  -----------------------------------------------------------------------
+  Definimos la feature SECURE_MODE, esta nos permitira definir si se
+  quiere utilizar o no el modo +z, como modo se seguridad.
+
+* 2009/01/17 ZipBreake <javier@jfv.es>        Darku2.2r07             FIX
+  -----------------------------------------------------------------------
+  Solucionado el problema de no otorgar +z a los nodos configurados en
+  modo webchat.
+
+* 2009/01/16 ZipBreake <javier@jfv.es>        Darku2.2r06         FEATURE
+  -----------------------------------------------------------------------
+  Defino una feature para prefijar un realname por defecto a los usuarios
+  que entren por webchat, para usar este campo para conocer la IP
+  real de los usuarios.
+
+* 2009/01/16 ZipBreake <javier@jfv.es>        Darku2.2r05         FEATURE
+  -----------------------------------------------------------------------
+  Añado una feature para definir que ircds van a ser utilizados para
+  usuarios que entran del WebChat.
+
+* 2009/01/16 ZipBreake <javier@jfv.es>        Darku2.2r04         FEATURE
+  -----------------------------------------------------------------------
+  Implementacion de la feature SECURE_CHANNELS, para evitar que los
+  usuarios que no tienen ni +r ni +z puedan crear canales.
+
+* 2009/01/16 ZipBreake <javier@jfv.es>        Darku2.2r03         FEATURE
+  -----------------------------------------------------------------------
+  Implemento el modo +z de usuario que permite entrar en canales con modo
+  +Z y considerarlo como un usuario que este securizado.
+
+* 2009/01/16 ZipBreake <javier@jfv.es>        Darku2.2r02         FEATURE
+  -----------------------------------------------------------------------
+  Implementacion del modo +Z de canales para solo entrar usuarios que
+  esten registrados o securizados.
+
+* 2009/01/16 ZipBreake <javier@jfv.es>        Darku2.2r01             FIX
+  -----------------------------------------------------------------------
+  Cambios esteticos en el ircd
+
+* 2009/01/16 ZipBreake <javier@jfv.es>        Darku2.2r00         FEATURE
+  -----------------------------------------------------------------------
+  Se inicia nueva version estatable tras un largo paron.
+
+* 2007/05/12 ZipBreake <javier@jfv.es>        Darku2.1r02         FEATURE
+  -----------------------------------------------------------------------
+  Inhabilito el modo +q
+
+* 2007/05/12 ZipBreake <javier@jfv.es>        Darku2.1r01         FEATURE
+  -----------------------------------------------------------------------
+  Elimino el modo +a de canales para seguir con la linea marcada con el
+  anterior DarkU
+
+* 2007/05/12 ZipBreake <javier@jfv.es>        Darku2.1r00         FEATURE
+  -----------------------------------------------------------------------
+  Se inicia nueva version estatable.
+
+* 2006/08/03 ZipBreake <javier@jfv.es>        Darku2.0r06         FEATURE
+  -----------------------------------------------------------------------
+  Por peticion de la administración de la red oculto el numerico en los
+  whois, excepto para la usuarios con modo +D
+
+* 2006/05/30 ZipBreake <javier@jfv.es>        Darku2.0r05         FEATURE
+  -----------------------------------------------------------------------
+  El numero de version lo pasamos al fichero .patches para en un futuro
+  poder hacer scripts de actualizacion automáticos.
+
+* 2006/05/27 ZipBreake <javier@jfv.es>        Darku2.0r04         FEATURE
+  -----------------------------------------------------------------------
+  RedHispana.es dejo de existir como red de IRC, la principal red que
+  utiliza este ircd ahora es iRC-Hispana, adapto las features por defecto
+  a esa red.
+
+* 2006/05/27 ZipBreake <javier@jfv.es>        Darku2.0r03         FEATURE
+  -----------------------------------------------------------------------
+  Arreglo los créditos y añado a Carlos.
+
+* 2006/05/27 Carlos <carlossc@gmail.com>      Darku2.0r02         CLEANUP
+  -----------------------------------------------------------------------
+  Limpieza del código para optimizar y que compile correctamente con las
+  versiones de GCC 4 y superiores
+
+* 2006/05/27 ZipBreake <javier@jfv.es>        Darku2.0r01         FEATURE
+  -----------------------------------------------------------------------
+  Cambio la terminacion de las ips virtuales a .vip, en el caso de ips
+  version 6, la terminacion se corresponde con .vip6
+
+* 2006/05/27 ZipBreake <javier@jfv.es>        Darku2.0r00         FEATURE
+  -----------------------------------------------------------------------
+  Cambio de nombre al ircuRH, version de RedHispana.es, para continuar
+  con la nomenclatura de DarkU.

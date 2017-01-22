@@ -1,0 +1,356 @@
+***** Cambios del ircu2.10 para Redhispana.Org *****
+
+RyDeN - 23 Octubre 2003
+Solo un usuario con +r puede tener host virtual personalizado.
+
+RyDeN - 23 Octubre 2003
+Reparado el bug de que si el usuario que se cambiaba de nick estaba baneado de un canal,
+se le asignaban los nuevos modos aunque no cambiase de nick.
+
+RyDeN - 23 Octubre 2003
+Reparado bug en wallops.
+
+RyDeN - 10 Octubre 2003
+En un ghost, añadimos en el KILL que killea nuestro propio nodo para que no haya problemas
+a la hora de propagar dicho KILL.
+
+RyDeN - 10 Octubre 2003
+Usuarios con +v y +h en un canal pueden auto-quitarse el privilegio.
+
+RyDeN - 10 Octubre 2003
+Los canales que no se deberían mostrar en el WHOIS aparecen ante un administrador entre
+paréntesis.
+
+RyDeN - 09 Octubre 2003
+Bug: Los cambios de modo en los canales locales son propagados a través de la red, elimino
+esto.
+
+RyDeN - 29 Septiembre 2003
+Arreglado bug en el broadcast del DBQ de DB2
+
+RyDeN - 29 Septiembre 2003
+En un BURST el WIPEOUT no elimina el modo +q
+
+RyDeN - 29 Septiembre 2003
+Arreglados pequeños bugs de la tabla 'C'
+
+RyDeN - 29 Septiembre 2003
+Creo la actividad de la tabla 'C'
+
+RyDeN - 29 Septiembre 2003
+Cambio el sistema de actividad de la base de datos para ganar en CPU.
+
+RyDeN - 28 Septiembre 2003
+Ahora también los preoperadores aparecen con un '*' en el WHO.
+
+RyDeN - 26 Septiembre 2003
+Le doy la utilidad de fundador a la tabla 'C'.
+
+RyDeN - 26 Septiembre 2003
+Elimino la protección de mayúsculas en el username
+
+RyDeN - 23 Septiembre 2003
+Creada la DB2
+
+RyDeN - 23 Septiembre 2003
+Creado el comando BMODE
+
+RyDeN - 22 Septiembre 2003
+No es necesario tener privilegios especiales para ver quién es representante en el WHO.
+
+RyDeN - 21 Septiembre 2003
+Creadas las E-Lines
+
+RyDeN - 13 Septiembre 2003
+Añadida linea en el whois de BOT de servicio
+
+RyDeN - 12 Septiembre 2003
+Si una tabla no cambia la fecha de su ultimo acceso no es releida en el REHASH.
+
+RyDeN - 10 Septiembre 2003
+Bug en get_hash()
+
+RyDeN - 18 Julio 2003
+Creada actividad para las tablas de vhosts.
+
+RyDeN - 18 Julio 2003
+Elimino el comando ACCOUNT, ya que es un comando inutil en RedHispana.
+
+RyDeN - 18 Julio 2003
+La badwords ahora se configuran por base de datos.
+
+RyDeN - 18 Julio 2003
+Eliminado bug del SETTIME que no permitia ajustar el tiempo de ninguna manera.
+
+RyDeN - 18 Julio 2003
+Agregado el flag de usuario 'n', modo de identificado ante los servicios, util
+para los services en caso de caida de los mismos. Este aparece en el whois.
+
+RyDeN - 17 Julio 2003
+Modo +c elimina también negrita, subrayado, reverso y anulado.
+
+RyDeN - 17 Julio 2003
+Al insertar un registro nuevo en la base de datos este es pasado por ToLower.
+
+RyDeN - 17 Julio 2003
+Hash de ip en ips virtuales personalizadas eliminado.
+
+RyDeN - 22 Junio 2003
+Los preopers también pueden hacer override en canales.
+
+RyDeN - 22 Junio 2003
+Aplicado el parche para el match() de undernet.
+
+RyDeN - 21 Junio 2003
+Modo de usuario +I eliminado por posible polémica.
+
+RyDeN - 21 Junio 2003
+Ahora el modo de canal +q es combinable con los demás modos.
+
+RyDeN - 19 Junio 2003
+Añadida la utilidad del modo +B (badwords) de canales. Este lee de un fichero llamado
+badwords.conf una serie de palabras que utilizará como palabras prohibidas.
+
+RyDeN - 16 Junio 2003
+Añadido el comando TBURST, que envía los topics en el burst.
+
+RyDeN - 14 Junio 2003
+Nueva negociación añadida: HIDESERV
+Para ocultar el servidor en /map /whois etc...
+
+RyDeN - 14 Junio 2003
+Elimino la macro sendheader del s_auth.c y creo una función para así poder incluir el
+nombre del servidor local en los notices.
+
+RyDeN - 12 Junio 2003
+Al hacer "make install" se genera un fichero de hashes vacío. Elimino esto y hago que
+a la hora de almacenar el hash, si el fichero hashes no existe, crea uno con todas las
+tablas.
+
+RyDeN - 12 Junio 2003
+El ircu de Undernet, al recibir un comando de un servidor, como estos estaban preparados
+para comunicarse sólamente con tokens, si el ircu no encontraba una funcion asignada a
+dicho comando buscando entre los tokens, la buscaba entre los comandos, pero utilizaba
+la misma función de búsqueda que para los tokens, por lo que comandos como PRIVMSG y
+PRIVS los confundía. Bug arreglado.
+
+RyDeN - 12 Junio 2003
+Ahora los servidores solo se comunican por tokens si se solicita en la negociación.
+
+RyDeN - 12 Junio 2003
+Comando GHOST añadido.
+
+RyDeN - 12 Junio 2003
+A petición de Fenriss desaparece el modo +S de canales (secureops), debido a su escasa
+utilidad.
+
+RyDeN - 12 Junio 2003
+Un arreglo estético:
+int m_comando(struct Client *cptr, struct Client *sptr, int parc, char *parv[])
+pasa a ser:
+CMD_FUNC(m_comando);
+
+RyDeN - 12 Junio 2003
+Comunicación servidor <=> servidor encriptada con RC4 añadida.
+
+RyDeN - 01 Junio 2003
+Añadida la utilidad de la tabla n, nicks registrados, suspendidos, forbid y ghost.
+
+RyDeN - 01 Junio 2003
+Añadido el control de I-Lines por BDD.
+
+Fenriss - 11 Mayo 2003
+Traducidos todos los mensajes RPL Y ERR del s_err.c
+
+RyDeN - 08 Mayo 2003
+Añado el comando CIFRANICK.
+
+RyDeN - 04 Mayo 2003
+Los modos de canal ahora no los puede cambiar un +k, sino un oper, admin o coadmin.
+
+RyDeN - 04 Mayo 2003
+Modos de canal RHMODE_ONLYADM eliminado, ya que esta función va integrada en la tabla
+'j' de la BDD.
+
+RyDeN - 04 Mayo 2003
+Creada la tabla 'j' de BDD, la cual contiene un valor similar al de la tabla 'f', pero
+que si el usuario en cuestión no tiene acceso a dichos flags, el servidor le deniega
+la entrada al canal que figura como clave del registro. Además creo la BDD persistente
+para que al hacer un cambio en la tabla j, se actualice el canal en cuestión, poniendo
+o quitando el bot virtual "ChanServ" el modo +j de canal (modo informativo).
+
+RyDeN - 02 Mayo 2003
+En el who también se muestran los nuevos modos de RedHispana.
+
+RyDeN - 02 Mayo 2003
+Cambios en el flag +I de usuario:
+ - Al activarlo, el usuario pierde todo tipo de privilegios en canales
+ - Al desactivarlo el usuario tan solo hará join, sin modos.
+
+RyDeN - 01 Mayo 2003
+Finalizada la BDD (s_bdd.c)
+
+RyDeN - 16 Febrero 2003
+Los HACK(4) solo se envían si quien los hace es un server.
+
+RyDeN - 16 Febrero 2003
+El modo +c de canales no parsea los colores a +q +o y +h
+
+RyDeN - 15 Febrero 2003
+Le doy la siguiente funcionalidad al channel half op:
+ - Tiene los mismos privilegios que el voice (+v).
+ - Puede dar y quitar +v.
+ - Puede kickear a usuarios normales y a +v.
+ - Establecer un topic.
+ - Cambiar todos los modos del canal menos el +l y el +k.
+ - Invitar.
+ - Banear.
+
+RyDeN - 15 Febrero 2003
+Aunque un usuario no tenga +r y el canal esté en +R, este sí puede hablar, ya que la función que
+desempeñaría el +R en este caso sería sustituída por el +M.
+
+RyDeN - 15 Febrero 2003
+Añadida protección para que teniendo el modo +q no se pueda tener +v +o y +h
+También el +q queda restringido a que solo lo puedan poner los servers y solo lo pueda tener el que
+figure como fundador del canal en la tabla 'c' de la BDD (en proyecto).
+
+RyDeN - 15 Febrero 2003
+Añadido el soporte para los modos de canal +h y +q
+
+RyDeN - 10 Febrero 2003
+Añadidos nuevos modos de canal:
+	  RHMODE_HALFOP,	'h',  Semi operador
+	  RHMODE_OWNER,		'q',  Fundador del canal
+	  RHMODE_BADWORDS,	'B',  Prohibir palabras de una lista
+	  RHMODE_NOCOLOR,	'c',  Canal sin colores
+	  RHMODE_RGSTRONLY,	'R',  Solo nicks con +r pueden acceder
+	  RHMODE_REGISTERED,	'r',  Canal registrado
+	  RHMODE_AUTOOP,	'A',  Autoop para el fundador
+	  RHMODE_SECUREOPS,	'S',  Secureops, solo nicks con +r pueden tener op
+	  RHMODE_ONLYADM,	'a',  Solo pueden entrar nicks con +A
+	  RHMODE_ONLYIRCOP, 	'O',  Solo pueden entrar nicks con +o
+	  RHMODE_CHARLAS,	'C',  Canal para charlas (no joins y parts)
+Aún queda por darle utilidad al half op y al channel owner
+
+RyDeN - 09 Febrero 2003
+Cambio el algoritmo de encriptación de IPs virtuales al TEA New Variant, que utiliza
+cuatro claves de cifrado. También he creado una utilidad para descifrarlas: el untea.
+Puedes bajartelo en http://devel.redhispana.org
+
+RyDeN - 29 Enero 2003
+Modo +I ya no es accesible al tener +A, sino por Base de Datos (en proyecto), en la tabla
+'o' haciendo un cálculo de bits, tal que:
+	+X -> 1
+	+k -> 2
+	+p -> 4
+	+h -> 8
+	+D -> 16
+	+a -> 32
+	+A -> 64
+	+I -> 128
+	+b -> 256
+	+B -> 512
+Es decir, que si quieres asignar a un usuario los modos +Xkh, tendrás que hacer:
+	+X = 1
+	+k = 2
+	+h = 8
+	    ---
+	     11
+
+RyDeN - 24 Enero 2003
+Los canales de un Channel Service SI se muestran en el /whois
+
+
+RyDeN - 24 Enero 2003
+Modo +I no puede interactuar con el IRC (topic, privmsg, notice, invite).
+
+
+RyDeN - 24 Enero 2003
+Modo +I de usuario creado, creando una total invisibilidad. Aún queda pendiente que solo
+se oculten los modos de canal cambiados por un usuario invisible de op/deop a su misma
+persona, o tal vez se restringan.
+
+
+RyDeN - 23 Enero 2003
+Añadida la posibilidad de utilizar nicks con 'ñ' y 'Ñ'.
+
+
+RyDeN - 23 Enero 2003
+Channel services no tienen límite de cambio de nicks ni límite de targets.
+Resúmen de los RHflags hasta el momento:
+	{ RHFLAGS_VIEWIP,	'X' }, Ve las ips ajenas
+	{ RHFLAGS_HELPOP,	'h' }, Operador de ayuda
+	{ RHFLAGS_DEVEL,	'D' }, Desarrollador
+	{ RHFLAGS_COADM,	'a' }, Co-administrador
+	{ RHFLAGS_ADM,		'A' }, Administrador
+	{ RHFLAGS_PREOP,	'p' }, Preoperador
+	{ RHFLAGS_ONLYREG,	'R' }, Solo admite privados de usuarios registrados
+	{ RHFLAGS_INVISIBLE,	'I' }, Invisible al IRC
+	{ RHFLAGS_REGNICK,	'r' }, Nickname registrado
+	{ RHFLAGS_USERBOT,	'b' }, User bot
+	{ RHFLAGS_BOT,		'B' }  Bot global
+
+
+DIaN - 23 Enero 2003
+Traducidos algunos raws
+
+
+RyDeN  - 23 Enero 2003
+Añadidos flags de bots +B y +b
++B -> roBot global
++b -> roBot de usuario
+El flag +B permite a ese bot controlar los modos de canales como si fuese un channel
+service y el flag +b elimina el control de flood de ese bot y no puede ser kickeado
+ni deopeado de los canales.
+
+
+RyDeN - 23 Enero 2003
+Solo los channel services (+k) pueden entrar a un número ilimitado de canales.
+Channel services no se caen por flood.
+Channel services no tienen control de flood.
+Channel services entran a canales sin restriccion.
+Channel services no tienen restricciones a la hora de hablar en canales (+m... +n...).
+Channel services SI pueden ser killeados.
+Channel services tienen acceso al cambio de modos de un canal pese a que no sean op.
+
+
+RyDeN - 23 Enero 2003
+Implemento la funcionalidad del +X y modifico ciertos paramentos del /whois
+
+
+RyDeN - 23 Enero 2003
+El comando account y el FLAGS_ACCOUNT asignado al +r los elimino para hacer de este flag
+un flag propio de RH con nuestra propia funcionabilidad.
+
+
+RyDeN - 22 Enero 2003
+Creo el componente de la estructura de usuario "User" cli_rhflags para añadir los
+flags de redhispana
+
+
+RyDeN - 22 Enero 2003
+Creo las ips virtuales sustituyendo en la estructura User host[] por virtualhost[]
+y modificando estos valores a lo largo del ircu
+
+
+RyDeN - 22 Enero 2003
+Añado los numéricos de los servidores al /map
+
+
+RyDeN - 21 Enero 2003
+Añado el comando /users
+
+
+RyDeN - 21 Enero 2003
+Añado un contador de record de usuarios globales que me servirá para el futuro
+/users y para calcular los porcentajes en el /map
+
+
+RyDeN - 21 Enero 2003
+Añado los features SHOWSERVON_MAP y SHOWSERVON_LINKS
+Con el SHOWSERVON_MAP desactivado, no se muestran los nombres de los servidores
+en el map pero sí los usuarios, numérico y demás..., excepto en el server propio
+del usuario.
+Con el SHOWSERVON_LINKS desactivado, no se muestran los nombres de los servidores
+en el links pero si la descripción, excepto en el server propio del usuario.
